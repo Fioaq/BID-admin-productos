@@ -47,7 +47,7 @@ const ProductForm = () => {
                 <h1>Product Manager</h1>
                 <div className='d-flex p-2 bg-secondary bg-opacity-10 rounded mb-2'>
                     <label htmlFor='title' className='m-2'>Title</label>
-                    <Field name="title" className="form-control h-10" />
+                    <Field name="title" className="form-control" />
                 </div>
                 {touched.title && errors.title && <p className="ms-5 text-danger">* {errors.title}</p>}
                 <div className='d-flex p-2 bg-secondary bg-opacity-10 rounded mb-2'>
