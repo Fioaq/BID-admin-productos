@@ -44,7 +44,7 @@ const ProductForm = () => {
         >
         {({errors, touched, isValid, dirty}) => (
             <Form>
-                <h1>Product Manager</h1>
+                <h3 className='d-flex justify-content-center'>Product Manager</h3>
                 <div className='d-flex p-2 bg-secondary bg-opacity-10 rounded mb-2'>
                     <label htmlFor='title' className='m-2'>Title</label>
                     <Field name="title" className="form-control" />
@@ -60,8 +60,9 @@ const ProductForm = () => {
                     <Field name="description" className="form-control" />
                 </div>
                 {touched.description && errors.description && <p className="ms-5 text-danger">* {errors.description}</p>}
-
-                <button type='submit' className="btn btn-primary mt-3" disabled={!(isValid && dirty)}>Create</button>
+                <div className='d-flex justify-content-center w-100'>
+                    <button type='submit' className="btn btn-secondary mt-3 w-50" disabled={!(isValid && dirty)}>Create</button>
+                </div>
             </Form>
         )}
         </Formik>
