@@ -25,6 +25,7 @@ const Detail = () => {
             <p>Price: ${product?.price}</p>
             <p>Description: {product?.description}</p>
             <Link to="/">Volver</Link>
+            <Link to={`/product/${id}/edit`}>Edit</Link>
         </div>
     )
 };
