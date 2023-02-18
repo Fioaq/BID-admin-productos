@@ -5,7 +5,7 @@ import axios from 'axios';
 const ProductList = props => {
     const { removeFromDom, product } = props;
 
-    const deletePerson = productId => {
+    const deleteProduct = productId => {
         axios.delete(`http://localhost:8000/api/product/${productId}`)
             .then(res => {
                 removeFromDom(productId)
@@ -20,7 +20,7 @@ const ProductList = props => {
                     {product.map((product, idx) =>
                         <tr key={idx}>
                             <td><Link to={`/product/${product._id}`} className="m-5">{product.title}</Link></td>
-                            <td><button onClick={e => deletePerson(product._id)} className="btn btn-danger p-1">Delete</button></td>
+                            <td><button onClick={e => deleteProduct(product._id)} className="btn btn-danger p-1">Delete</button></td>
                         </tr>
                     )}
                 </tbody>
