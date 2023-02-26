@@ -1,16 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import DeleteButton from './DeleteButton';
 
 const ProductList = props => {
     const { removeFromDom, product } = props;
-
-    const deleteProduct = productId => {
-        axios.delete(`http://localhost:8000/api/product/${productId}`)
-            .then(res => {
-                removeFromDom(productId)
-            })
-    }
 
     return (
         <>
@@ -20,7 +13,7 @@ const ProductList = props => {
                     {product.map((product, idx) =>
                         <tr key={idx}>
                             <td><Link to={`/product/${product._id}`} className="m-5">{product.title}</Link></td>
-                            <td><button onClick={e => deleteProduct(product._id)} className="btn btn-danger p-1">Delete</button></td>
+                            <td><DeleteButton id={product._id} removeDOM={removeFromDom} /></td>
                         </tr>
                     )}
                 </tbody>
